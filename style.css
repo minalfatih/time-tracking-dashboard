@@ -1,0 +1,240 @@
+* {
+  box-sizing: border-box;
+}
+:root {
+  --Blue: hsl(246, 80%, 60%);
+  --Light-red1: hsl(15, 100%, 70%); /*(work)*/
+  --Soft-blue: hsl(195, 74%, 62%); /*(play)*/
+  --Light-red2: hsl(348, 100%, 68%); /*(study)*/
+  --Lime-green: hsl(145, 58%, 55%); /*(exercise)*/
+  --Violet: hsl(264, 64%, 52%); /*(social)*/
+  --Soft-orange: hsl(43, 84%, 65%); /*(self care)*/
+  --Very-dark-blue: hsl(226, 43%, 10%);
+  --Dark-blue: hsl(235, 46%, 20%);
+  --Desaturated-blue: hsl(235, 45%, 61%);
+  --Pale-Blue: hsl(236, 100%, 87%);
+}
+ul {
+  list-style: none;
+}
+a {
+  text-decoration: none;
+}
+body {
+  margin: 0;
+  background-color: var(--Very-dark-blue);
+  font-family: Arial, Helvetica, sans-serif;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+}
+main {
+  width: 75%;
+  color: white;
+}
+@media (max-width: 990px) {
+  main {
+    padding: 50px 0;
+  }
+}
+@media (max-width: 767px) {
+  main {
+    width: 90%;
+  }
+}
+main .container {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 20px;
+}
+main .container .info {
+  grid-row: 1/3;
+  border-radius: 15px;
+  background-color: var(--Dark-blue);
+}
+main .container .info .information {
+  /* background-color: var(--Desaturated-blue); */
+  background-color: hsl(246, 80%, 60%);
+  border-radius: 15px;
+  padding: 35px;
+}
+main .container .info .information img {
+  width: 80px;
+  border: 3px solid white;
+  border-radius: 50%;
+}
+main .container .info .information .report p {
+  margin-bottom: 0;
+}
+main .container .info .information .report h1 {
+  margin-top: 0;
+  font-size: 40px;
+  font-weight: normal;
+}
+@media (max-width: 767px) {
+  main .container .info .information {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 25px;
+  }
+  main .container .info .information img {
+    width: 70px;
+  }
+  main .container .info .information .report h1 {
+    font-size: 27px;
+  }
+}
+main .container .info ul {
+  padding: 10px 35px;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+@media (max-width: 576px) {
+  main .container .info ul {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
+main .container .info ul li a {
+  color: var(--Desaturated-blue);
+  transition: 0.3s linear;
+}
+main .container .info ul li a:hover {
+  color: white;
+}
+main .container .info ul li .active {
+  color: white;
+}
+main .container .box {
+  border-radius: 15px;
+  position: relative;
+  width: 100%;
+  height: 220px;
+}
+main .container .box > div {
+  height: 60px;
+  border-radius: 15px 15px 0 0;
+}
+main .container .box .imgPlace {
+  position: relative;
+  overflow: hidden;
+}
+main .container .box .imgPlace img {
+  position: absolute;
+  top: -5px;
+  right: 20px;
+  animation: move 1s ease-in-out alternate infinite;
+}
+@keyframes move {
+  to {
+    top: 10px;
+  }
+}
+main .container .box .track {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  height: 180px;
+  border-radius: 15px;
+  background-color: var(--Dark-blue);
+  padding: 25px;
+  display: flex;
+  flex-direction: column;
+  gap: 25px;
+  transition: 0.3s linear;
+}
+main .container .box .track:hover {
+  background-color: #34397b;
+  cursor: pointer;
+}
+main .container .work > div {
+  background-color: var(--Light-red1);
+}
+main .container .track .name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+main .container .track .name::after {
+  content: url(./images/icon-ellipsis.svg);
+  cursor: pointer;
+}
+main .container .track .name h2 {
+  font-weight: normal;
+  font-size: 16px;
+  margin: 0;
+}
+main .container .track .time {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+main .container .track .time h1 {
+  font-weight: normal;
+  font-size: 55px;
+  margin: 0;
+}
+main .container .track .time p {
+  margin: 0;
+}
+main .container p {
+  color: var(--Pale-Blue);
+}
+main .container .play > div {
+  background-color: var(--Soft-blue);
+}
+main .container .study > div {
+  background-color: var(--Light-red2);
+}
+main .container .exercise > div {
+  background-color: var(--Lime-green);
+}
+main .container .social > div {
+  background-color: var(--Violet);
+}
+main .container .self > div {
+  background-color: var(--Soft-orange);
+}
+@media (max-width: 576px) {
+  main .container .box {
+    height: 166px;
+  }
+  main .container .box > div {
+    height: 50px;
+  }
+  main .container .box .track {
+    height: 130px;
+  }
+  main .container .track .name {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  main .container .track .time {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+  }
+  main .container .track .time h1 {
+    font-size: 30px;
+  }
+}
+.attribution {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translate(-50%);
+  width: 100%;
+  color: var(--Pale-Blue);
+  font-size: 11px;
+  text-align: center;
+}
+.attribution a {
+  color: var(--Soft-orange);
+}
